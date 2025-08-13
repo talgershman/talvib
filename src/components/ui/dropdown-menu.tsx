@@ -13,14 +13,19 @@ export interface DropdownItem {
 export interface DropdownMenuProps {
   button: React.ReactNode;
   items: DropdownItem[];
+  asChild?: boolean;
 }
 
-export function DropdownMenu({ button, items }: DropdownMenuProps) {
+export function DropdownMenu({ button, items, asChild = false }: DropdownMenuProps) {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="inline-flex items-center justify-center gap-2 rounded-md border border-black/10 dark:border-white/15 bg-background px-3 py-2 text-sm font-medium text-foreground shadow-sm hover:bg-black/5 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30">
-        {button}
-      </Menu.Button>
+      {asChild ? (
+        <Menu.Button as={React.Fragment}>{button}</Menu.Button>
+      ) : (
+        <Menu.Button className="inline-flex items-center justify-center gap-2 rounded-md border border-black/10 dark:border-white/15 bg-background px-3 py-2 text-sm font-medium text-foreground shadow-sm hover:bg-black/5 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30">
+          {button}
+        </Menu.Button>
+      )}
       <Transition
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { DropdownMenu } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
   return (
@@ -17,18 +18,23 @@ export function SiteHeader() {
         <Link href="/blog" className="hover:underline">
           Blog
         </Link>
+        <Link href="/style-guide" className="hover:underline">
+          Style Guide
+        </Link>
         <Link href="/contact" className="hover:underline">
           Contact
         </Link>
       </nav>
       <div className="flex items-center gap-2">
         <DropdownMenu
-          button={<span>More</span>}
+          asChild
+          button={<Button size="sm" variant="secondary">More</Button>}
           items={[
             { id: "home", label: "Home", href: "/" },
             { id: "projects", label: "Projects", href: "/projects" },
             { id: "blog", label: "Blog", href: "/blog" },
             { id: "contact", label: "Contact", href: "/contact" },
+            { id: "style-guide", label: "Style Guide", href: "/style-guide" },
           ]}
         />
         <ThemeToggle />

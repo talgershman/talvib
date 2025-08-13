@@ -1,0 +1,16 @@
+TalVib Rules Index
+
+See `.cursor/rules/style-guide.md` for TalVib style guide enforcement rules.
+
+When to use automatically
+- Apply these rules whenever working on UI in this repo, including:
+  - Editing React files under `src/app/**/*.tsx`
+  - Editing shared components under `src/components/**/*.tsx`
+  - Creating or modifying primitives under `src/components/ui/**/*.tsx`
+  - Editing global styles or tokens in `src/app/globals.css`
+  - Adding or modifying Headless UI elements (`Dialog`, `Menu`, `Listbox`)
+  - Writing Tailwind classes for spacing, typography, or colors
+
+Scope
+- These rules are guidance for code generation and edits. Prefer shared primitives (`Button`, `Card`, `Dialog`, `DropdownMenu`) and semantic tokens.
+
