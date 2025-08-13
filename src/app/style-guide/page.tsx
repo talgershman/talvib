@@ -1,11 +1,11 @@
 "use client";
 
-import * as React from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Modal } from "@/components/ui/dialog";
 import { DropdownMenu } from "@/components/ui/dropdown-menu";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Option {
   id: number;
@@ -39,7 +39,9 @@ export default function StyleGuidePage() {
     <div className="space-y-12">
       <header className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Style Guide</h1>
-        <p className="text-sm text-foreground/70">Design tokens, Headless UI configurations, and component usage examples.</p>
+        <p className="text-sm text-foreground/70">
+          Design tokens, Headless UI configurations, and component usage examples.
+        </p>
       </header>
 
       <section className="space-y-6">
@@ -47,48 +49,75 @@ export default function StyleGuidePage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-3">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Colors</h3>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+              Colors
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-14 rounded border border-black/10 dark:border-white/15 bg-background" />
                 <div className="text-sm">
                   <div className="font-medium">background</div>
-                  <div className="text-foreground/70">{colorTokens.background || "var(--background)"}</div>
+                  <div className="text-foreground/70">
+                    {colorTokens.background || "var(--background)"}
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-10 w-14 rounded border border-black/10 dark:border-white/15 bg-foreground" />
                 <div className="text-sm">
                   <div className="font-medium">foreground</div>
-                  <div className="text-foreground/70">{colorTokens.foreground || "var(--foreground)"}</div>
+                  <div className="text-foreground/70">
+                    {colorTokens.foreground || "var(--foreground)"}
+                  </div>
                 </div>
               </div>
             </div>
             <p className="text-xs text-foreground/70">
-              Semantic colors are mapped via CSS variables in <code>globals.css</code> and consumed with Tailwind
-              classes like <code>bg-background</code> and <code>text-foreground</code>.
+              Semantic colors are mapped via CSS variables in <code>globals.css</code> and consumed
+              with Tailwind classes like <code>bg-background</code> and <code>text-foreground</code>
+              .
             </p>
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Typography</h3>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+              Typography
+            </h3>
             <div className="space-y-1">
               <div className="text-xs text-foreground/70">Font families</div>
-              <div className="text-sm"><span className="font-semibold">--font-sans</span>: system UI sans</div>
-              <div className="text-sm"><span className="font-semibold">--font-mono</span>: system monospace</div>
+              <div className="text-sm">
+                <span className="font-semibold">--font-sans</span>: system UI sans
+              </div>
+              <div className="text-sm">
+                <span className="font-semibold">--font-mono</span>: system monospace
+              </div>
             </div>
             <div className="grid grid-cols-3 gap-2 text-sm">
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-xs">text-xs</div>
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-sm">text-sm</div>
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-base">text-base</div>
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-lg">text-lg</div>
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-xl">text-xl</div>
-              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-2xl">text-2xl</div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-xs">
+                text-xs
+              </div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-sm">
+                text-sm
+              </div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-base">
+                text-base
+              </div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-lg">
+                text-lg
+              </div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-xl">
+                text-xl
+              </div>
+              <div className="p-2 rounded-md border border-black/10 dark:border-white/15 text-2xl">
+                text-2xl
+              </div>
             </div>
           </div>
 
           <div className="space-y-3 md:col-span-2">
-            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Spacing scale</h3>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+              Spacing scale
+            </h3>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
               {[
                 { k: "1", px: 4 },
@@ -110,7 +139,9 @@ export default function StyleGuidePage() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-foreground/70">Use Tailwind spacing utilities (p/m/gap) with the scale above.</p>
+            <p className="text-xs text-foreground/70">
+              Use Tailwind spacing utilities (p/m/gap) with the scale above.
+            </p>
           </div>
         </div>
       </section>
@@ -118,15 +149,20 @@ export default function StyleGuidePage() {
       <section className="space-y-6">
         <h2 className="text-xl font-semibold">Headless UI Configurations</h2>
         <div className="space-y-3 text-sm">
-          <p>Headless UI Tailwind CSS plugin is enabled for better data-* selectors and transitions.</p>
+          <p>
+            Headless UI Tailwind CSS plugin is enabled for better data-* selectors and transitions.
+          </p>
           <div className="rounded-md border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 p-3">
             <div className="mb-2 text-xs text-foreground/70">src/app/globals.css</div>
-            <pre className="overflow-x-auto text-xs leading-5"><code>{`@import "tailwindcss";
-@plugin "@headlessui/tailwindcss";`}</code></pre>
+            <pre className="overflow-x-auto text-xs leading-5">
+              <code>{`@import "tailwindcss";
+@plugin "@headlessui/tailwindcss";`}</code>
+            </pre>
           </div>
 
           <p>
-            Transitions are configured via utility classes in components like <code>Modal</code> and <code>DropdownMenu</code>.
+            Transitions are configured via utility classes in components like <code>Modal</code> and{" "}
+            <code>DropdownMenu</code>.
           </p>
         </div>
       </section>
@@ -135,7 +171,9 @@ export default function StyleGuidePage() {
         <h2 className="text-xl font-semibold">Components</h2>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Buttons</h3>
+          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+            Buttons
+          </h3>
           <div className="flex flex-wrap items-center gap-3">
             <Button>Default</Button>
             <Button variant="secondary">Secondary</Button>
@@ -147,7 +185,9 @@ export default function StyleGuidePage() {
             <Button size="sm">Small</Button>
             <Button size="default">Default</Button>
             <Button size="lg">Large</Button>
-            <Button size="icon" aria-label="Icon button">★</Button>
+            <Button size="icon" aria-label="Icon button">
+              ★
+            </Button>
           </div>
         </div>
 
@@ -157,33 +197,50 @@ export default function StyleGuidePage() {
             <Card>
               <CardHeader>
                 <CardTitle>Card title</CardTitle>
-                <CardDescription>Supporting text for the card. Use this for summaries and descriptions.</CardDescription>
+                <CardDescription>
+                  Supporting text for the card. Use this for summaries and descriptions.
+                </CardDescription>
               </CardHeader>
               <CardFooter>
                 <Button size="sm">Action</Button>
-                <Button size="sm" variant="secondary">Secondary</Button>
+                <Button size="sm" variant="secondary">
+                  Secondary
+                </Button>
               </CardFooter>
             </Card>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Typography</h3>
+          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+            Typography
+          </h3>
           <div className="space-y-2">
             <h1 className="text-3xl font-bold">Heading 1</h1>
             <h2 className="text-2xl font-semibold">Heading 2</h2>
             <h3 className="text-xl font-semibold">Heading 3</h3>
-            <p className="text-sm">Body text with <a href="#" className="underline">links</a> and <code className="rounded bg-black/5 px-1 py-0.5 dark:bg-white/10">inline code</code>.</p>
+            <p className="text-sm">
+              Body text with{" "}
+              <a href="#" className="underline">
+                links
+              </a>{" "}
+              and{" "}
+              <code className="rounded bg-black/5 px-1 py-0.5 dark:bg-white/10">inline code</code>.
+            </p>
             <small className="text-xs text-foreground/70">Caption or helper text</small>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Dialog</h3>
+          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+            Dialog
+          </h3>
           <div className="flex items-center gap-3">
             <Button onClick={() => setIsModalOpen(true)}>Open modal</Button>
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Example modal">
-              <p>Modal content using Headless UI <code>Dialog</code> with Tailwind transitions.</p>
+              <p>
+                Modal content using Headless UI <code>Dialog</code> with Tailwind transitions.
+              </p>
             </Modal>
           </div>
         </div>
@@ -201,7 +258,9 @@ export default function StyleGuidePage() {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Listbox</h3>
+          <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">
+            Listbox
+          </h3>
           <div className="w-64">
             <Listbox value={selectedOption} onChange={setSelectedOption}>
               <div className="relative">
@@ -239,7 +298,9 @@ export default function StyleGuidePage() {
           <h3 className="text-sm font-medium uppercase tracking-wider text-foreground/70">Forms</h3>
           <form className="grid gap-4 md:grid-cols-2">
             <div className="space-y-1">
-              <label htmlFor="name" className="text-sm font-medium">Name</label>
+              <label htmlFor="name" className="text-sm font-medium">
+                Name
+              </label>
               <input
                 id="name"
                 type="text"
@@ -248,7 +309,9 @@ export default function StyleGuidePage() {
               />
             </div>
             <div className="space-y-1">
-              <label htmlFor="email" className="text-sm font-medium">Email</label>
+              <label htmlFor="email" className="text-sm font-medium">
+                Email
+              </label>
               <input
                 id="email"
                 type="email"
@@ -257,7 +320,9 @@ export default function StyleGuidePage() {
               />
             </div>
             <div className="space-y-1 md:col-span-2">
-              <label htmlFor="message" className="text-sm font-medium">Message</label>
+              <label htmlFor="message" className="text-sm font-medium">
+                Message
+              </label>
               <textarea
                 id="message"
                 rows={4}
@@ -306,4 +371,3 @@ export default function StyleGuidePage() {
     </div>
   );
 }
-

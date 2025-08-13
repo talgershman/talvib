@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import { Button as HeadlessButton } from "@headlessui/react";
+import * as React from "react";
 
 type ButtonVariant = "default" | "secondary" | "ghost" | "outline" | "destructive";
 type ButtonSize = "default" | "sm" | "lg" | "icon";

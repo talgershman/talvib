@@ -5,12 +5,7 @@
   "printWidth": 100,
   "tabWidth": 2,
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-  "importOrder": [
-    "^react$",
-    "^next(.*)$",
-    "^@/(.*)$",
-    "^[./]"
-  ],
+  "importOrder": ["^react$", "^next(.*)$", "^@/(.*)$", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { DropdownMenu } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { DropdownMenu } from "@/components/ui/dropdown-menu";
 
 export function SiteHeader() {
   return (
@@ -28,7 +28,11 @@ export function SiteHeader() {
       <div className="flex items-center gap-2">
         <DropdownMenu
           asChild
-          button={<Button size="sm" variant="secondary">More</Button>}
+          button={
+            <Button size="sm" variant="secondary">
+              More
+            </Button>
+          }
           items={[
             { id: "home", label: "Home", href: "/" },
             { id: "projects", label: "Projects", href: "/projects" },

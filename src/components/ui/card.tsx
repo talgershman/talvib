@@ -31,4 +31,3 @@ export function CardContent({ className = "", ...props }: CardSectionProps) {
 export function CardFooter({ className = "", ...props }: CardSectionProps) {
   return <div className={`p-5 pt-0 flex items-center gap-2 ${className}`} {...props} />;
 }
-

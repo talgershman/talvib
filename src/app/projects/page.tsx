@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const projects = [
   { id: 1, title: "Project A", description: "A concise description of Project A." },
@@ -21,7 +21,9 @@ export default function ProjectsPage() {
             </CardHeader>
             <CardFooter>
               <Button size="sm">View</Button>
-              <Button size="sm" variant="secondary">Source</Button>
+              <Button size="sm" variant="secondary">
+                Source
+              </Button>
             </CardFooter>
           </Card>
         ))}

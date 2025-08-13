@@ -17,7 +17,9 @@ export function ThemeToggle() {
   return (
     <Button type="button" aria-label="Toggle theme" onClick={toggle} variant="ghost">
       {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-      <span className="ml-2 hidden sm:inline">{mounted ? (isDark ? "Light" : "Dark") : "Theme"} mode</span>
+      <span className="ml-2 hidden sm:inline">
+        {mounted ? (isDark ? "Light" : "Dark") : "Theme"} mode
+      </span>
     </Button>
   );
 }
